@@ -1,6 +1,6 @@
 import datetime
 
-something = "1"
+camera_list=
 
 def scan_for_cameras():
   subnet = "10.0.0.0/16"
