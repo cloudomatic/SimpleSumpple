@@ -1,13 +1,20 @@
+#!/usr/bin/python
+
 import datetime
 
-camera_list=
+camera_list=["10.0.0.2", "10.0.0.3"]
 
-def scan_for_cameras():
-  subnet = "10.0.0.0/16"
-  print "scan_for_cameras"
 
+def scan_loop():
+  log("scan_loop()")
+  for camera in camera_list:
+    log("scanning camera at address: " + camera)
+    
+
+
+  
 def log(message):
-  print "simple_sumpple: " + '{:%Y.%m.%d %H:%M:%S}'.format(datetime.datetime.now()) + ": " + message
+  print "SimpleSumpple: " + '{:%Y.%m.%d %H:%M:%S}'.format(datetime.datetime.now()) + ": " + message
 
 if __name__ == "__main__":
-  log("Validating camera list: " + something)
+  scan_loop()
