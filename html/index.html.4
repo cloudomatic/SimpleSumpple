@@ -1,0 +1,61 @@
+<html>
+<script>
+  window.onload = function() {
+    function updateImage() {
+        var images = document.getElementsByTagName("img");
+        for (var image = 0; image < images.length; image++) {
+          images[image].src = images[image].src.split("?")[0] + "?" + new Date().getTime();
+        }
+    }
+    setInterval(updateImage, 1000);
+  }
+</script>
+<style>
+
+   img {
+      display:block; width:100%; height:auto;
+   }
+
+   .cameras {
+     table-layout: fixed;
+     width: 100%;
+     white-space: nowrap;
+   }
+
+   .cameras td {
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     text-align: left;
+     padding: 2px 2px;
+   }
+
+</style>
+
+<body onload="updateImage();">
+  <table class="cameras">
+    <tr>
+      <td><a href="http://10.0.0.2/main.htm" target="10.0.0.2_console"><img id='10.0.0.2' src="http://localhost/sumpple_images/10.0.0.2.latest.jpg"></a></td>
+      <td><a href="http://10.0.0.4/main.htm" target="10.0.0.4_console"><img id='10.0.0.4' src="http://localhost/sumpple_images/10.0.0.4.latest.jpg"></a></td>
+    </tr>
+    <tr>
+      <td><a href="http://192.168.88.88/main.htm" target="10.0.0.2_console"><img id='192.168.88.88' src="http://localhost/sumpple_images/192.168.88.88.latest.jpg"></a></td>
+      <td><a href="http://192.168.99.99/main.htm" target="10.0.0.2_console"><img id='192.168.99.99' src="http://localhost/sumpple_images/192.168.99.99.latest.jpg"></a></td>
+    </tr>
+<!--
+    <tr>
+      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+    </tr>
+    <tr>
+      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+      <td><img src="/tmp/sumpple/10.0.0.55.current_snapshot.jpeg"></td>
+      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+-->
+    </tr>
+  </table>
+</body>
+</html>
