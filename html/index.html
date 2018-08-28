@@ -1,59 +1,81 @@
 <html>
-<script>
-  window.onload = function() {
-    function updateImage() {
-        var images = document.getElementsByTagName("img");
-        for (var image = 0; image < images.length; image++) {
-          images[image].src = images[image].src.split("?")[0] + "?" + new Date().getTime();
-        }
+
+  <style>
+    .cameraImage {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
-    setInterval(updateImage, 1000);
-  }
-</script>
-<style>
 
-   img {
-      display:block; width:100%; height:auto;
-   }
+    .div_panel {
+      background: red;
+    }
 
-   .cameras {
-     table-layout: fixed;
-     width: 100%;
-     white-space: nowrap;
-   }
+    #divStatusPanel {
+      font-family:Courier;
+      font-size: 10px;
+      font-wight: bold;
+      color: #deedef;
+      background: #061e30;
+      border-radius: 25px;
+      border: 2px solid #deedef;
+      padding: 10px; 
+    }
+  </style>
+  <body bgcolor=black>
 
-   .cameras td {
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-     text-align: left;
-     padding: 2px 2px;
-   }
+   <div id="divTop">
 
-</style>
-
-<body onload="updateImage();">
-  <table class="cameras">
+   <table id="tableCameras" width=1000 height=400 cellpadding=0 cellspacing=0 border=0>
     <tr>
-      <td><a href="http://10.0.0.2/main.htm" target="10.0.0.2_console"><img id='10.0.0.2' src="http://10.0.0.13/sumpple_images/10.0.0.2.current_snapshot.jpeg"></a></td>
-      <td><img id='10.0.0.10' src="http://10.0.0.13/sumpple_images/10.0.0.3.current_snapshot.jpeg"></td>
-<!--
-      <td><img src="/tmp/sumpple/10.0.0.10.20180418181722.jpeg"></td>
-      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+      <td><a href="http://10.0.0.2/main.htm" target="10.0.0.2_console"><img id="idImage_10.0.0.2" src="http://localhost/sumpple_images/10.0.0.2.latest.jpg" class="cameraImage"></a></td>
+      <td><a href="http://10.0.0.4/main.htm" target="10.0.0.4_console"><img id="idImage_10.0.0.4" src="http://localhost/sumpple_images/10.0.0.4.latest.jpg" class="cameraImage"></a></td>
+      <td rowspan=2>
+        <table border=0 cellpading=0 cellspacing=0 width=200 height=100%>
+          <tr>
+            <td>
+              <div id="divStatusPanel">
+                <a id="idStatusPanelText">
+                   <!-- Begin status panel text.  This will be updated dynamically from the remote server -->
+                Alarms: None<br>
+                Last motion location: None<br>
+                Last motion time:     None</br>
+                <br>
+                Alarms: None<br>
+                Last motion location: None<br>
+                Last motion time:     None</br>
+                <br>
+                Alarms: None<br>
+                Last motion location: None<br>
+                Last motion time:     None</br>
+                <br>
+
+                Alarms: None<br>
+                Last motion location: None<br>
+                Last motion time:     None</br>
+                <br>
+                Alarms: None<br>
+                Last motion location: None<br>
+                Last motion time:     None</br>
+                <br>
+                Alarms: None<br>
+                Last motion location: None<br>
+                Last motion time:     None</br>
+                <br>
+                   <!-- End status panel text -->
+                </a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
     </tr>
     <tr>
-      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
-      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
-      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
-      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
+      <td><a href="http://10.0.0.2/main.htm" target="10.0.0.4_console"><img id="idImage_10.0.0.9" src="http://localhost/sumpple_images/10.0.0.9.latest.jpg" class="cameraImage"></a></td>
+      <td><a href="http://10.0.0.2/main.htm" target="10.0.0.4_console"><img id="idImage_10.0.0.10" src="http://localhost/sumpple_images/10.0.0.10.latest.jpg" class="cameraImage"></a></td>
     </tr>
-    <tr>
-      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
-      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
-      <td><img src="/tmp/sumpple/10.0.0.55.current_snapshot.jpeg"></td>
-      <td><img src="/tmp/sumpple/10.0.0.10.current_snapshot.jpeg"></td>
--->
-    </tr>
-  </table>
-</body>
+   </table>
+   </div>
+  </body>
+
 </html>
