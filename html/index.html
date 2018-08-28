@@ -1,6 +1,7 @@
 <html>
 
   <style>
+
     .cameraImage {
       max-width: 100%;
       max-height: 100%;
@@ -21,6 +22,24 @@
       border: 2px solid #deedef;
       padding: 10px; 
     }
+
+    .aCameraImageTimestamp {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      color: yellow;
+      font-family:Courier;
+      font-size: 12px;
+      font-wight: bold;
+    }
+
+    .divCameraImageContainer {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+
   </style>
   <body bgcolor=black>
 
@@ -28,7 +47,18 @@
 
    <table id="tableCameras" width=1000 height=400 cellpadding=0 cellspacing=0 border=0>
     <tr>
-      <td><a href="http://10.0.0.2/main.htm" target="10.0.0.2_console"><img id="idImage_10.0.0.2" src="http://localhost/sumpple_images/10.0.0.2.latest.jpg" class="cameraImage"></a></td>
+      <td>
+        <a href="http://10.0.0.2/main.htm" target="10.0.0.2_console">
+          <div id="divCameraImageContainer01" class="divCameraImageContainer">
+            <img id="idImage_10.0.0.2" src="http://localhost/sumpple_images/10.0.0.2.latest.jpg" class="cameraImage">
+            <a class="aCameraImageTimestamp">
+               20180825 10:00:15 
+               <img src="refresh_icon_02.png" width=15 height=15><!-- Icon used in accordance with license: https://www.iconfinder.com/icons/10515/refresh_yellow_icon -->
+               <img src="database.ico" width=15 height=15><!--  Icon used in accordance with license: http://www.iconarchive.com/show/farm-fresh-icons-by-fatcow/database-yellow-icon.html http://www.fatcow.com/free-icons  -->
+            </a>
+          </div>
+        </a>
+      </td>
       <td><a href="http://10.0.0.4/main.htm" target="10.0.0.4_console"><img id="idImage_10.0.0.4" src="http://localhost/sumpple_images/10.0.0.4.latest.jpg" class="cameraImage"></a></td>
       <td rowspan=2>
         <table border=0 cellpading=0 cellspacing=0 width=200 height=100%>
